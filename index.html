@@ -4,17 +4,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Global Enterprises | We Supply Strength, You Create Dreams</title>
-<meta name="description" content="Global Enterprises - Building materials, quality supplies, wholesale enquiries and construction partnerships.">
+<title>Global Enterprises | Building Materials</title>
+<meta name="description" content="Global Enterprises - We supply strength, you create dreams. Quality building materials, wholesale supply and construction support.">
 
 <style>
 :root {
   --gold: #d4af37;
   --gold-light: #f5df91;
   --black: #080808;
-  --dark: #111111;
+  --dark: #111;
   --white: #f5f5f5;
-  --grey: #a5a5a5;
+  --grey: #aaa;
 }
 
 * {
@@ -25,6 +25,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
@@ -38,27 +39,21 @@ body.intro-active {
   overflow: hidden;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
 img {
   display: block;
   width: 100%;
 }
 
-button {
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, input, textarea, select {
   font-family: inherit;
 }
 
-.gold {
-  color: var(--gold);
-}
-
-/* =========================
-   CINEMATIC HOUSE INTRO
-========================= */
+/* ================= INTRO HOUSE ANIMATION ================= */
 
 #luxuryIntro {
   position: fixed;
@@ -67,10 +62,9 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background:
-    radial-gradient(circle at 50% 50%, #28200e 0%, #0b0b0b 45%, #000 100%);
-  transition: opacity 1.3s ease, visibility 1.3s ease;
   overflow: hidden;
+  background: radial-gradient(circle, #28200e 0%, #0b0b0b 50%, #000 100%);
+  transition: opacity 1.3s ease, visibility 1.3s ease;
 }
 
 #luxuryIntro.hide-intro {
@@ -90,10 +84,10 @@ button {
   position: absolute;
   width: 300px;
   height: 300px;
-  background: rgba(212,175,55,.08);
+  background: rgba(212,175,55,.1);
   border-radius: 50%;
-  filter: blur(80px);
-  top: 15%;
+  filter: blur(90px);
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -102,7 +96,7 @@ button {
   width: min(100%, 450px);
   margin: auto;
   position: relative;
-  filter: drop-shadow(0 0 12px rgba(212,175,55,.15));
+  filter: drop-shadow(0 0 12px rgba(212,175,55,.2));
 }
 
 .house-line {
@@ -115,54 +109,22 @@ button {
   stroke-dashoffset: 1000;
 }
 
-.foundation {
-  animation: drawHouse 1s ease forwards .2s;
-}
-
-.base-detail {
-  animation: drawHouse .8s ease forwards .7s;
-}
-
-.walls {
-  animation: drawHouse 1.1s ease forwards 1.1s;
-}
-
-.roof {
-  stroke-width: 5;
-  animation: drawHouse 1.3s ease forwards 2s;
-}
-
-.roof-detail {
-  stroke: #fff0b3;
-  stroke-width: 1.5;
-  animation: drawHouse 1s ease forwards 2.5s;
-}
-
-.pillars {
-  animation: drawHouse 1.1s ease forwards 1.8s;
-}
-
-.door {
-  animation: drawHouse .8s ease forwards 2.9s;
-}
-
-.window-detail {
-  stroke-width: 1.5;
-  animation: drawHouse .8s ease forwards 3.1s;
-}
+.foundation { animation: drawHouse 1s ease forwards .2s; }
+.base-detail { animation: drawHouse .8s ease forwards .7s; }
+.walls { animation: drawHouse 1.1s ease forwards 1.1s; }
+.roof { stroke-width: 5; animation: drawHouse 1.3s ease forwards 2s; }
+.roof-detail { stroke: #fff0b3; stroke-width: 1.5; animation: drawHouse 1s ease forwards 2.5s; }
+.pillars { animation: drawHouse 1.1s ease forwards 1.8s; }
+.door { animation: drawHouse .8s ease forwards 2.9s; }
+.window-detail { stroke-width: 1.5; animation: drawHouse .8s ease forwards 3.1s; }
+.finishing { stroke-width: 5; filter: drop-shadow(0 0 12px gold); animation: drawHouse .6s ease forwards 3.8s; }
 
 .house-window {
-  fill: #d4af37;
+  fill: var(--gold);
   opacity: 0;
   stroke: #fce6a0;
   stroke-width: 1;
   animation: windowGlow 1s ease forwards 3.8s;
-}
-
-.finishing {
-  stroke-width: 5;
-  filter: drop-shadow(0 0 12px gold);
-  animation: drawHouse .6s ease forwards 3.8s;
 }
 
 @keyframes drawHouse {
@@ -170,10 +132,7 @@ button {
 }
 
 @keyframes windowGlow {
-  0% {
-    opacity: 0;
-    fill: #4b3510;
-  }
+  0% { opacity: 0; fill: #4b3510; }
   100% {
     opacity: 1;
     fill: #f6ce63;
@@ -188,10 +147,10 @@ button {
 }
 
 .intro-brand-name {
-  font-size: clamp(25px, 5vw, 43px);
+  color: var(--gold);
+  font-size: clamp(24px, 5vw, 43px);
   font-weight: 900;
   letter-spacing: 5px;
-  color: var(--gold);
   text-shadow: 0 0 20px rgba(212,175,55,.4);
 }
 
@@ -226,21 +185,16 @@ button {
 }
 
 @keyframes brandReveal {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* =========================
-   HEADER
-========================= */
+/* ================= HEADER ================= */
 
 header {
   position: fixed;
-  width: 100%;
   top: 0;
   left: 0;
+  width: 100%;
   z-index: 1000;
   padding: 16px 7%;
   display: flex;
@@ -249,6 +203,7 @@ header {
   background: rgba(0,0,0,.88);
   backdrop-filter: blur(15px);
   border-bottom: 1px solid rgba(212,175,55,.2);
+  transition: .4s;
 }
 
 .brand {
@@ -268,6 +223,7 @@ header {
   font-weight: 900;
   font-size: 20px;
   position: relative;
+  flex-shrink: 0;
 }
 
 .logo-box::after {
@@ -283,17 +239,17 @@ header {
 }
 
 .brand-text span {
+  display: block;
+  color: var(--gold);
   font-size: 9px;
   letter-spacing: 2px;
-  color: var(--gold);
-  display: block;
   margin-top: 5px;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 28px;
 }
 
 .nav-links a {
@@ -322,9 +278,7 @@ header {
   cursor: pointer;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
+/* ================= HERO ================= */
 
 .hero {
   min-height: 100vh;
@@ -333,10 +287,7 @@ header {
   position: relative;
   padding: 130px 7% 80px;
   background:
-    linear-gradient(90deg,
-      rgba(0,0,0,.96) 0%,
-      rgba(0,0,0,.75) 48%,
-      rgba(0,0,0,.2) 100%),
+    linear-gradient(90deg, rgba(0,0,0,.96), rgba(0,0,0,.75) 48%, rgba(0,0,0,.2)),
     url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=90")
     center/cover no-repeat;
 }
@@ -345,7 +296,7 @@ header {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, #080808 0%, transparent 25%);
+  background: linear-gradient(0deg, #080808, transparent 25%);
   pointer-events: none;
 }
 
@@ -357,14 +308,8 @@ header {
 }
 
 @keyframes heroEnter {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .hero-label {
@@ -381,9 +326,7 @@ header {
   margin-bottom: 25px;
 }
 
-.hero h1 span {
-  color: var(--gold);
-}
+.hero h1 span { color: var(--gold); }
 
 .hero p {
   max-width: 550px;
@@ -444,9 +387,7 @@ header {
   50% { opacity: .4; }
 }
 
-/* =========================
-   COMMON SECTIONS
-========================= */
+/* ================= COMMON SECTION ================= */
 
 section {
   padding: 100px 7%;
@@ -465,9 +406,7 @@ section {
   margin-bottom: 25px;
 }
 
-.section-title span {
-  color: var(--gold);
-}
+.section-title span { color: var(--gold); }
 
 .section-desc {
   color: var(--grey);
@@ -475,17 +414,11 @@ section {
   max-width: 650px;
 }
 
-.section-heading {
-  margin-bottom: 50px;
-}
+.section-heading { margin-bottom: 50px; }
 
-/* =========================
-   ABOUT
-========================= */
+/* ================= ABOUT ================= */
 
-.about {
-  background: #101010;
-}
+.about { background: #101010; }
 
 .about-grid {
   display: grid;
@@ -498,6 +431,7 @@ section {
   height: 500px;
   position: relative;
   overflow: hidden;
+  background: #171717;
 }
 
 .about-image img {
@@ -506,9 +440,7 @@ section {
   transition: transform 1s;
 }
 
-.about-image:hover img {
-  transform: scale(1.06);
-}
+.about-image:hover img { transform: scale(1.06); }
 
 .about-image::after {
   content: "";
@@ -543,17 +475,13 @@ section {
   line-height: 1.7;
 }
 
-/* =========================
-   PRODUCTS
-========================= */
+/* ================= PRODUCTS ================= */
 
-.products {
-  background: #080808;
-}
+.products { background: #080808; }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 25px;
 }
 
@@ -563,6 +491,12 @@ section {
   height: 350px;
   background: #151515;
   border: 1px solid rgba(212,175,55,.18);
+  transition: transform .4s, border-color .4s;
+}
+
+.product-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--gold);
 }
 
 .product-card img {
@@ -594,7 +528,6 @@ section {
 
 .product-card-content h3 {
   font-size: 20px;
-  color: white;
   margin-bottom: 10px;
 }
 
@@ -612,13 +545,9 @@ section {
   margin-top: 15px;
 }
 
-/* =========================
-   GALLERY
-========================= */
+/* ================= GALLERY ================= */
 
-.luxury-gallery {
-  background: #101010;
-}
+.luxury-gallery { background: #101010; }
 
 .gallery-heading {
   text-align: center;
@@ -648,7 +577,7 @@ section {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
 }
 
@@ -657,6 +586,7 @@ section {
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(212,175,55,.2);
+  background: #151515;
 }
 
 .gallery-item.large {
@@ -667,8 +597,8 @@ section {
 .gallery-item img {
   height: 100%;
   object-fit: cover;
-  transition: transform 1.2s ease, filter 1s ease;
   filter: brightness(.75);
+  transition: transform 1.2s, filter 1s;
 }
 
 .gallery-item:hover img {
@@ -678,9 +608,9 @@ section {
 
 .gallery-caption {
   position: absolute;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
   padding: 25px;
   color: #fff;
   font-size: 20px;
@@ -690,17 +620,13 @@ section {
   letter-spacing: 1px;
 }
 
-/* =========================
-   SERVICES
-========================= */
+/* ================= SERVICES ================= */
 
-.services {
-  background: #080808;
-}
+.services { background: #080808; }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 20px;
 }
 
@@ -709,8 +635,6 @@ section {
   padding: 35px 25px;
   border: 1px solid #242424;
   transition: .5s;
-  position: relative;
-  overflow: hidden;
 }
 
 .service-card:hover {
@@ -745,9 +669,7 @@ section {
   letter-spacing: 2px;
 }
 
-/* =========================
-   GOLD BANNER
-========================= */
+/* ================= BANNER ================= */
 
 .banner {
   padding: 85px 7%;
@@ -755,7 +677,7 @@ section {
   background:
     linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
     url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=85")
-    center/cover fixed;
+    center/cover;
   border-top: 1px solid var(--gold);
   border-bottom: 1px solid var(--gold);
 }
@@ -765,9 +687,7 @@ section {
   margin-bottom: 20px;
 }
 
-.banner h2 span {
-  color: var(--gold);
-}
+.banner h2 span { color: var(--gold); }
 
 .banner p {
   color: #ccc;
@@ -775,13 +695,9 @@ section {
   margin-bottom: 30px;
 }
 
-/* =========================
-   CONTACT
-========================= */
+/* ================= CONTACT ================= */
 
-.contact {
-  background: #111;
-}
+.contact { background: #111; }
 
 .contact-grid {
   display: grid;
@@ -836,7 +752,8 @@ section {
   color: white;
   margin-bottom: 15px;
   outline: none;
-  font-size: 13px;
+  font-size: 14px;
+  border-radius: 3px;
 }
 
 .contact-form input:focus,
@@ -865,9 +782,7 @@ section {
   background: #fff0b3;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* ================= FOOTER ================= */
 
 footer {
   padding: 50px 7%;
@@ -905,9 +820,7 @@ footer {
   transition: .3s;
 }
 
-.footer-col a:hover {
-  color: var(--gold);
-}
+.footer-col a:hover { color: var(--gold); }
 
 .footer-bottom {
   border-top: 1px solid #222;
@@ -920,13 +833,9 @@ footer {
   font-size: 11px;
 }
 
-.footer-bottom span {
-  color: var(--gold);
-}
+.footer-bottom span { color: var(--gold); }
 
-/* =========================
-   WHATSAPP FLOATING BUTTON
-========================= */
+/* ================= WHATSAPP ================= */
 
 .whatsapp-float {
   position: fixed;
@@ -946,13 +855,9 @@ footer {
   transition: .3s;
 }
 
-.whatsapp-float:hover {
-  transform: scale(1.12);
-}
+.whatsapp-float:hover { transform: scale(1.12); }
 
-/* =========================
-   SCROLL REVEAL
-========================= */
+/* ================= SCROLL ANIMATIONS ================= */
 
 .reveal {
   opacity: 0;
@@ -965,78 +870,91 @@ footer {
   transform: translateY(0);
 }
 
-.gallery-item {
-  animation: galleryAppear .8s ease both;
+/* ================= RESPONSIVE TABLET ================= */
+
+@media(max-width:1100px) {
+  header { padding-left: 4%; padding-right: 4%; }
+  .nav-links { gap: 15px; }
+  .nav-links a { font-size: 11px; }
+  .brand-text h2 { font-size: 15px; }
+  .about-grid { gap: 35px; }
+  .services-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .product-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 
-.gallery-item:nth-child(2) { animation-delay: .1s; }
-.gallery-item:nth-child(3) { animation-delay: .2s; }
-.gallery-item:nth-child(4) { animation-delay: .3s; }
-.gallery-item:nth-child(5) { animation-delay: .4s; }
+/* ================= RESPONSIVE MOBILE ================= */
 
-@keyframes galleryAppear {
-  from {
-    opacity: 0;
-    transform: translateY(35px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
-
-@media(max-width: 1000px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media(max-width: 750px) {
+@media(max-width:768px) {
   header {
-    padding: 12px 5%;
+    height: 75px;
+    padding: 10px 5%;
+  }
+
+  .brand { gap: 8px; }
+
+  .logo-box {
+    width: 42px;
+    height: 42px;
+    font-size: 17px;
+  }
+
+  .brand-text h2 {
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  .brand-text span {
+    font-size: 8px;
+    letter-spacing: 1px;
   }
 
   .menu-btn {
     display: block;
+    padding: 8px;
   }
 
   .nav-links {
-    position: absolute;
-    top: 75px;
-    left: 0;
-    right: 0;
-    background: #080808;
-    border-bottom: 1px solid var(--gold);
     display: none;
+    position: absolute;
+    top: 74px;
+    left: 0;
+    width: 100%;
+    background: rgba(5,5,5,.98);
     flex-direction: column;
-    padding: 25px;
-    gap: 25px;
+    gap: 0;
+    padding: 10px 5% 25px;
+    border-bottom: 1px solid var(--gold);
   }
 
-  .nav-links.show {
-    display: flex;
+  .nav-links.show { display: flex; }
+
+  .nav-links a {
+    width: 100%;
+    text-align: center;
+    padding: 17px;
+    border-bottom: 1px solid #222;
+    font-size: 13px;
   }
+
+  .nav-contact { margin-top: 10px; }
 
   .hero {
-    padding: 130px 5% 90px;
+    min-height: 90vh;
+    padding: 120px 6% 80px;
     background-position: 60% center;
   }
 
-  .hero h1 {
-    font-size: clamp(40px, 12vw, 65px);
-  }
+  .hero h1 { font-size: clamp(38px, 10vw, 65px); }
+  .hero p { font-size: 14px; }
+  .hero-label { letter-spacing: 2px; font-size: 10px; }
+  .hero-buttons { gap: 10px; }
 
-  section {
-    padding: 70px 5%;
-  }
+  .btn { padding: 14px 17px; font-size: 10px; }
+
+  section { padding: 65px 6%; }
+
+  .section-title { font-size: clamp(30px, 8vw, 45px); }
+  .section-desc { font-size: 14px; }
 
   .about-grid,
   .contact-grid {
@@ -1044,67 +962,135 @@ footer {
     gap: 35px;
   }
 
-  .about-image {
-    height: 350px;
-  }
+  .about-image { height: 350px; }
+  .about-features { gap: 12px; }
+  .feature { padding: 15px; }
 
   .product-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 12px;
   }
 
-  .product-card {
-    height: 330px;
+  .product-card { height: 280px; }
+
+  .product-card-content {
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
   }
+
+  .product-card-content h3 { font-size: 15px; }
+  .product-card-content p { font-size: 11px; }
 
   .gallery-grid {
     grid-template-columns: 1fr;
+    gap: 15px;
   }
 
+  .gallery-item,
   .gallery-item.large {
-    height: 380px;
+    height: 320px;
     grid-row: auto;
   }
 
-  .gallery-item {
-    height: 300px;
+  .gallery-caption {
+    font-size: 17px;
+    padding: 18px;
   }
 
   .services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 12px;
   }
 
-  .contact-form {
-    padding: 25px;
+  .service-card { padding: 22px 17px; }
+  .service-card h3 { font-size: 16px; }
+  .service-card p { font-size: 11px; }
+
+  .contact-form { padding: 22px; }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-size: 16px;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr;
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { gap: 10px; }
+
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    bottom: 18px;
+    right: 18px;
   }
 
-  .footer-bottom {
+  .intro-brand-name { letter-spacing: 3px; }
+  .intro-brand-tag { letter-spacing: 2px; font-size: 9px; }
+  .intro-house { width: 95%; }
+
+  .banner { background-attachment: scroll; }
+}
+
+/* ================= SMALL PHONES ================= */
+
+@media(max-width:480px) {
+  .hero { min-height: 85vh; }
+
+  .hero h1 { font-size: 39px; }
+
+  .hero-buttons {
     flex-direction: column;
+    align-items: stretch;
   }
+
+  .hero-buttons .btn {
+    text-align: center;
+    width: 100%;
+  }
+
+  .product-grid { grid-template-columns: 1fr; }
+  .product-card { height: 320px; }
+  .services-grid { grid-template-columns: 1fr; }
+
+  .about-features { grid-template-columns: 1fr 1fr; }
 
   .intro-brand-name {
-    letter-spacing: 3px;
+    font-size: 24px;
+    letter-spacing: 2px;
   }
 
   .intro-brand-tag {
-    letter-spacing: 2px;
-    font-size: 9px;
+    font-size: 8px;
+    letter-spacing: 1.5px;
   }
 
-  .intro-house {
-    width: 95%;
-  }
+  .intro-house { width: 100%; }
 
-  .banner {
-    background-attachment: scroll;
+  .gallery-item,
+  .gallery-item.large { height: 270px; }
+
+  .contact-item { padding: 20px; }
+}
+
+/* LARGE MONITORS */
+
+@media(min-width:1400px) {
+  section,
+  .hero,
+  .banner,
+  footer {
+    padding-left: max(7%, calc((100vw - 1400px) / 2));
+    padding-right: max(7%, calc((100vw - 1400px) / 2));
   }
 }
 
-@media(prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+/* REDUCE MOTION ACCESSIBILITY */
+
+@media(prefers-reduced-motion:reduce) {
+  *,
+  *::before,
+  *::after {
     animation-duration: .01ms !important;
     transition-duration: .01ms !important;
     scroll-behavior: auto !important;
@@ -1115,81 +1101,59 @@ footer {
 
 <body class="intro-active">
 
-<!-- =========================
-     INTRO ANIMATION
-========================= -->
-
+<!-- HOUSE INTRO -->
 <div id="luxuryIntro">
   <div class="intro-content">
     <div class="intro-glow"></div>
 
     <svg class="intro-house" viewBox="0 0 400 300">
 
-      <!-- Foundation -->
       <path class="house-line foundation"
         d="M65 250 H335 M85 235 H315"/>
 
-      <!-- Foundation blocks -->
       <path class="house-line base-detail"
         d="M100 250 V265 H300 V250
            M150 250 V265
            M250 250 V265"/>
 
-      <!-- House walls -->
       <path class="house-line walls"
         d="M105 235 V140 H295 V235"/>
 
-      <!-- Roof structure -->
       <path class="house-line roof"
         d="M75 145 L200 55 L325 145"/>
 
-      <!-- Roof inner detail -->
       <path class="house-line roof-detail"
         d="M95 145 L200 75 L305 145"/>
 
-      <!-- Pillars -->
       <path class="house-line pillars"
         d="M125 150 V230
            M175 150 V230
            M225 150 V230
            M275 150 V230"/>
 
-      <!-- Door -->
       <path class="house-line door"
         d="M180 235 V180 H220 V235"/>
 
-      <!-- Windows -->
-      <rect class="house-window window1"
-        x="120" y="165" width="35" height="35"/>
+      <rect class="house-window" x="120" y="165" width="35" height="35"/>
+      <rect class="house-window" x="245" y="165" width="35" height="35"/>
 
-      <rect class="house-window window2"
-        x="245" y="165" width="35" height="35"/>
-
-      <!-- Window dividers -->
       <path class="house-line window-detail"
         d="M137.5 165 V200 M120 182.5 H155
            M262.5 165 V200 M245 182.5 H280"/>
 
-      <!-- Final golden base -->
-      <path class="house-line finishing"
-        d="M65 250 H335"/>
+      <path class="house-line finishing" d="M65 250 H335"/>
     </svg>
 
     <div class="intro-brand">
       <div class="intro-brand-name">GLOBAL ENTERPRISES</div>
-      <div class="intro-brand-tag">
-        WE SUPPLY STRENGTH, YOU CREATE DREAMS
-      </div>
+      <div class="intro-brand-tag">WE SUPPLY STRENGTH, YOU CREATE DREAMS</div>
     </div>
 
     <div class="intro-loading"></div>
   </div>
 </div>
 
-<!-- =========================
-     HEADER
-========================= -->
-
+<!-- HEADER -->
 <header>
   <a href="#home" class="brand">
     <div class="logo-box">GE</div>
@@ -1211,10 +1175,7 @@ footer {
   </nav>
 </header>
 
-<!-- =========================
-     HERO
-========================= -->
-
+<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-content">
     <div class="hero-label">YOUR TRUSTED BUILDING MATERIALS PARTNER</div>
@@ -1241,17 +1202,16 @@ footer {
   <div class="hero-scroll">SCROLL TO EXPLORE ↓</div>
 </section>
 
-<!-- =========================
-     ABOUT
-========================= -->
-
+<!-- ABOUT -->
 <section class="about" id="about">
   <div class="about-grid reveal">
 
     <div class="about-image">
       <img
         src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
-        alt="Modern architectural home">
+        alt="Modern architectural home"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85';">
     </div>
 
     <div>
@@ -1296,10 +1256,7 @@ footer {
   </div>
 </section>
 
-<!-- =========================
-     PRODUCTS
-========================= -->
-
+<!-- PRODUCTS -->
 <section class="products" id="products">
   <div class="section-heading reveal">
     <div class="section-label">WHAT WE SUPPLY</div>
@@ -1315,7 +1272,9 @@ footer {
     <div class="product-card reveal">
       <img
         src="https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?auto=format&fit=crop&w=900&q=85"
-        alt="Construction cement and materials">
+        alt="Cement and construction materials"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=85';">
       <div class="product-card-content">
         <h3>Cement & Construction</h3>
         <p>Essential construction materials for dependable structures.</p>
@@ -1326,7 +1285,9 @@ footer {
     <div class="product-card reveal">
       <img
         src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=85"
-        alt="Steel and structural construction">
+        alt="Steel and structural construction"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=85';">
       <div class="product-card-content">
         <h3>Steel & Structural</h3>
         <p>Strength and support for your construction requirements.</p>
@@ -1337,7 +1298,9 @@ footer {
     <div class="product-card reveal">
       <img
         src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85"
-        alt="Premium interior and tiles">
+        alt="Tiles and premium finishing"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85';">
       <div class="product-card-content">
         <h3>Tiles & Finishing</h3>
         <p>Finishing products to create beautiful spaces.</p>
@@ -1348,7 +1311,9 @@ footer {
     <div class="product-card reveal">
       <img
         src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=900&q=85"
-        alt="Electrical materials">
+        alt="Electrical products and wiring"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=85';">
       <div class="product-card-content">
         <h3>Electrical Products</h3>
         <p>Electrical products and solutions for building needs.</p>
@@ -1359,7 +1324,9 @@ footer {
     <div class="product-card reveal">
       <img
         src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=900&q=85"
-        alt="Hardware tools and products">
+        alt="Hardware tools"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=900&q=85';">
       <div class="product-card-content">
         <h3>Hardware & Tools</h3>
         <p>Tools, accessories and essentials for construction work.</p>
@@ -1367,10 +1334,13 @@ footer {
       </div>
     </div>
 
+    <!-- BUILDING ESSENTIALS IMAGE FIX -->
     <div class="product-card reveal">
       <img
-        src="https://images.unsplash.com/photo-1592833159157-6b6b0e7a4c10?auto=format&fit=crop&w=900&q=85"
-        alt="Building construction materials">
+        src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=85"
+        alt="Building essentials and construction supplies"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85';">
       <div class="product-card-content">
         <h3>Building Essentials</h3>
         <p>Everyday essentials to help keep projects moving.</p>
@@ -1381,12 +1351,8 @@ footer {
   </div>
 </section>
 
-<!-- =========================
-     IMAGE GALLERY
-========================= -->
-
+<!-- GALLERY -->
 <section class="luxury-gallery" id="projects">
-
   <div class="gallery-heading reveal">
     <span>OUR WORLD OF CONSTRUCTION</span>
     <h2>Building <em>Excellence</em></h2>
@@ -1398,45 +1364,52 @@ footer {
     <div class="gallery-item large reveal">
       <img
         src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
-        alt="Luxury modern home">
+        alt="Luxury modern home"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85';">
       <div class="gallery-caption">Modern Architecture</div>
     </div>
 
     <div class="gallery-item reveal">
       <img
         src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85"
-        alt="Luxury residential exterior">
+        alt="Luxury residential exterior"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85';">
       <div class="gallery-caption">Premium Homes</div>
     </div>
 
     <div class="gallery-item reveal">
       <img
         src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85"
-        alt="Luxury interior">
+        alt="Luxury interior"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85';">
       <div class="gallery-caption">Fine Interiors</div>
     </div>
 
     <div class="gallery-item reveal">
       <img
         src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=85"
-        alt="Modern architectural design">
+        alt="Modern architectural design"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85';">
       <div class="gallery-caption">Architectural Design</div>
     </div>
 
     <div class="gallery-item reveal">
       <img
         src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85"
-        alt="Premium home">
+        alt="Premium home"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85';">
       <div class="gallery-caption">Luxury Living</div>
     </div>
 
   </div>
 </section>
 
-<!-- =========================
-     SERVICES
-========================= -->
-
+<!-- SERVICES -->
 <section class="services" id="services">
   <div class="section-heading reveal">
     <div class="section-label">HOW WE HELP YOU</div>
@@ -1492,24 +1465,14 @@ footer {
   </div>
 </section>
 
-<!-- =========================
-     BANNER
-========================= -->
-
+<!-- BRAND BANNER -->
 <section class="banner reveal">
   <h2>Building Together.<br><span>Growing Together.</span></h2>
-
-  <p>
-    From foundation to finishing, let's make your construction journey stronger.
-  </p>
-
+  <p>From foundation to finishing, let's make your construction journey stronger.</p>
   <a href="#contact" class="btn btn-gold">START YOUR ENQUIRY</a>
 </section>
 
-<!-- =========================
-     CONTACT
-========================= -->
-
+<!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="section-heading reveal">
     <div class="section-label">GET IN TOUCH</div>
@@ -1543,21 +1506,17 @@ footer {
 
       <div class="contact-item">
         <h3>BUSINESS ENQUIRIES</h3>
-        <p>
-          Wholesale • Customer Support • Partnerships • Careers
-        </p>
+        <p>Wholesale • Customer Support • Partnerships • Careers</p>
       </div>
 
     </div>
 
-    <form class="contact-form reveal" id="enquiryForm">
+    <form class="contact-form" id="enquiryForm">
       <h3>Send an Enquiry</h3>
 
-      <input type="text" id="customerName"
-        placeholder="Your Name" required>
+      <input type="text" id="customerName" placeholder="Your Name" required>
 
-      <input type="tel" id="customerPhone"
-        placeholder="Phone Number" required>
+      <input type="tel" id="customerPhone" placeholder="Phone Number" required>
 
       <select id="enquiryType" required>
         <option value="">Select Enquiry Type</option>
@@ -1569,8 +1528,7 @@ footer {
         <option>Other</option>
       </select>
 
-      <textarea id="customerMessage"
-        placeholder="Write your message..." required></textarea>
+      <textarea id="customerMessage" placeholder="Write your message..." required></textarea>
 
       <button type="submit">SEND ENQUIRY VIA WHATSAPP</button>
     </form>
@@ -1578,10 +1536,7 @@ footer {
   </div>
 </section>
 
-<!-- =========================
-     FOOTER
-========================= -->
-
+<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
 
@@ -1626,24 +1581,17 @@ footer {
   </div>
 </footer>
 
-<!-- FLOATING WHATSAPP -->
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp-float"
+   href="https://wa.me/919380902234"
+   target="_blank"
+   rel="noopener"
+   aria-label="WhatsApp Global Enterprises">☎</a>
 
-<a
-  class="whatsapp-float"
-  href="https://wa.me/919380902234"
-  target="_blank"
-  aria-label="WhatsApp Global Enterprises">
-  ☎
-</a>
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
+<!-- ================= JAVASCRIPT ================= -->
 <script>
 
-// ===== CINEMATIC INTRO =====
-
+// HOUSE INTRO ANIMATION
 const luxuryIntro = document.getElementById("luxuryIntro");
 
 if (luxuryIntro) {
@@ -1662,26 +1610,20 @@ if (luxuryIntro) {
       setTimeout(() => {
         luxuryIntro.remove();
       }, 1400);
-
     }, 6500);
   }
 }
 
-// ===== MOBILE MENU =====
-
+// MOBILE MENU
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
 menuBtn.addEventListener("click", () => {
   navLinks.classList.toggle("show");
-
-  menuBtn.textContent = navLinks.classList.contains("show")
-    ? "✕"
-    : "☰";
+  menuBtn.textContent = navLinks.classList.contains("show") ? "✕" : "☰";
 });
 
-// Close menu when clicking a link
-
+// CLOSE MENU AFTER LINK CLICK
 document.querySelectorAll(".nav-links a").forEach(link => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("show");
@@ -1689,11 +1631,10 @@ document.querySelectorAll(".nav-links a").forEach(link => {
   });
 });
 
-// ===== SCROLL REVEAL =====
-
+// SCROLL REVEAL
 const revealElements = document.querySelectorAll(".reveal");
 
-const revealObserver = new IntersectionObserver((entries) => {
+const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("active");
@@ -1708,8 +1649,7 @@ revealElements.forEach(element => {
   revealObserver.observe(element);
 });
 
-// ===== WHATSAPP ENQUIRY FORM =====
-
+// WHATSAPP ENQUIRY FORM
 const enquiryForm = document.getElementById("enquiryForm");
 
 enquiryForm.addEventListener("submit", function(event) {
@@ -1732,11 +1672,9 @@ enquiryForm.addEventListener("submit", function(event) {
     encodeURIComponent(whatsappMessage);
 
   window.open(whatsappURL, "_blank");
-
 });
 
-// ===== HEADER SCROLL EFFECT =====
-
+// HEADER SCROLL EFFECT
 window.addEventListener("scroll", function() {
   const header = document.querySelector("header");
 
@@ -1750,6 +1688,5 @@ window.addEventListener("scroll", function() {
 });
 
 </script>
-
 </body>
 </html>
