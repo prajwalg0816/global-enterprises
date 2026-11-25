@@ -1,279 +1,1156 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Global Enterprises | Building Materials</title>
-  <meta name="description" content="Global Enterprises - Building materials, wholesale enquiries, customer support, business partnerships and careers.">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Global Enterprises | Building Materials & Construction Supply</title>
+<meta name="description" content="Global Enterprises - Quality building materials, wholesale supply, business partnerships, customer support and careers.">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  --black: #090909;
+  --dark: #111111;
+  --dark2: #191919;
+  --gold: #c9a45c;
+  --gold-light: #e4c783;
+  --white: #ffffff;
+  --grey: #aaaaaa;
+  --border: rgba(201,164,92,.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1180px, 90%);
+  margin: auto;
+}
+
+/* NAVIGATION */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(8,8,8,.96);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(15px);
+}
+
+.navbar {
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-symbol {
+  width: 45px;
+  height: 45px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  display: grid;
+  place-items: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.brand-name {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 2px;
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.brand-name span {
+  color: var(--gold);
+}
+
+.brand-sub {
+  color: #aaa;
+  font-size: 9px;
+  letter-spacing: 4px;
+  margin-top: 5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+
+.nav-links a {
+  font-size: 12px;
+  color: #ddd;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.nav-cta {
+  padding: 11px 17px;
+  border: 1px solid var(--gold);
+  color: var(--gold) !important;
+}
+
+.menu-btn {
+  display: none;
+  color: var(--gold);
+  background: none;
+  border: 1px solid var(--gold);
+  padding: 8px 12px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 690px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.68) 48%, rgba(0,0,0,.2) 100%),
+    url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=2000&q=90')
+    center/cover no-repeat;
+}
+
+.hero-content {
+  padding: 110px 0;
+  max-width: 750px;
+}
+
+.gold-line {
+  width: 65px;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 25px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(44px, 6vw, 80px);
+  line-height: 1.12;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  color: var(--gold);
+}
+
+.hero-text {
+  color: #d1d1d1;
+  max-width: 550px;
+  font-size: 16px;
+  margin-bottom: 35px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 24px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: #111;
+}
+
+.btn-gold:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid #c9a45c;
+  color: white;
+}
+
+.btn-outline:hover {
+  background: var(--gold);
+  color: black;
+}
+
+/* INTRO STRIP */
+
+.intro-strip {
+  background: var(--gold);
+  color: #111;
+  padding: 23px 0;
+}
+
+.strip-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.strip-content strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+}
+
+.strip-content p {
+  font-size: 13px;
+}
+
+/* GENERAL SECTIONS */
+
+.section {
+  padding: 100px 0;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.section-text {
+  color: var(--grey);
+  max-width: 650px;
+  font-size: 15px;
+}
+
+.section-heading {
+  margin-bottom: 50px;
+}
+
+/* ABOUT */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 65px;
+}
+
+.about-image {
+  min-height: 470px;
+  background:
+    linear-gradient(0deg, rgba(0,0,0,.05), transparent),
+    url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=85')
+    center/cover;
+  position: relative;
+}
+
+.image-label {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  padding: 18px 22px;
+  background: var(--gold);
+  color: #111;
+}
+
+.image-label strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+}
+
+.about-content .section-text {
+  margin-bottom: 22px;
+}
+
+.about-points {
+  display: grid;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.about-point {
+  color: #ddd;
+  font-size: 14px;
+}
+
+.about-point span {
+  color: var(--gold);
+  margin-right: 12px;
+}
+
+/* PRODUCTS */
+
+.products-section {
+  background: #111;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.product-card {
+  background: #181818;
+  border: 1px solid #2b2b2b;
+  transition: .3s;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+}
+
+.product-img {
+  height: 230px;
+  background-size: cover;
+  background-position: center;
+  transition: .5s;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.03);
+}
+
+.product-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  padding: 22px 22px 5px;
+}
+
+.product-card p {
+  color: #aaa;
+  font-size: 13px;
+  padding: 0 22px 24px;
+}
+
+.p1 {
+  background-image: url('https://images.unsplash.com/photo-1513467655676-561b7d3c5c1b?auto=format&fit=crop&w=800&q=85');
+}
+.p2 {
+  background-image: url('https://images.unsplash.com/photo-1590650046871-92c887180603?auto=format&fit=crop&w=800&q=85');
+}
+.p3 {
+  background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=85');
+}
+.p4 {
+  background-image: url('https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=800&q=85');
+}
+.p5 {
+  background-image: url('https://images.unsplash.com/photo-1581141849291-1125ce4e5b67?auto=format&fit=crop&w=800&q=85');
+}
+.p6 {
+  background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=85');
+}
+
+/* SERVICES */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 20px;
+}
+
+.service-card {
+  padding: 35px;
+  background: #151515;
+  border: 1px solid #292929;
+  transition: .3s;
+}
+
+.service-card:hover {
+  border-color: var(--gold);
+  background: #1c1a16;
+}
+
+.service-icon {
+  color: var(--gold);
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.service-link {
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* BUSINESS BANNER */
+
+.business-banner {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.55)),
+    url('https://images.unsplash.com/photo-1503387762-592dead58ef?auto=format&fit=crop&w=1800&q=90')
+    center/cover;
+  padding: 90px 0;
+  text-align: center;
+}
+
+.business-banner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 52px);
+  margin-bottom: 15px;
+}
+
+.business-banner p {
+  color: #ddd;
+  margin-bottom: 30px;
+}
+
+/* CONTACT */
+
+.contact-section {
+  background: #111;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.contact-details {
+  display: grid;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.contact-item h4 {
+  color: var(--gold);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.contact-item p,
+.contact-item a {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.contact-form {
+  padding: 35px;
+  background: #1a1a1a;
+  border: 1px solid var(--border);
+}
+
+.contact-form h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 27px;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 17px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  color: #ccc;
+  margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 13px;
+  background: #0c0c0c;
+  color: white;
+  border: 1px solid #333;
+  outline: none;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-note {
+  font-size: 11px;
+  color: #999;
+  margin-top: 12px;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 60px 0 25px;
+  background: #050505;
+  border-top: 1px solid var(--border);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 45px;
+}
+
+.footer-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  margin-bottom: 15px;
+}
+
+.footer-title span {
+  color: var(--gold);
+}
+
+footer p {
+  color: #888;
+  font-size: 13px;
+}
+
+footer h4 {
+  color: var(--gold);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.footer-links {
+  display: grid;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+}
+
+.copyright {
+  border-top: 1px solid #222;
+  padding-top: 22px;
+  text-align: center;
+  color: #777;
+  font-size: 11px;
+}
+
+/* WHATSAPP BUTTON */
+
+.whatsapp {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  background: #c9a45c;
+  color: #111;
+  padding: 14px 20px;
+  font-weight: bold;
+  font-size: 13px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.4);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px) {
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .about-grid {
+    gap: 30px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media(max-width:700px) {
+  .navbar {
+    height: 72px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    background: #090909;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px 5%;
+    border-bottom: 1px solid var(--gold);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+  .nav-cta {
+    text-align: center;
+  }
+
+  .hero {
+    min-height: 580px;
+    background-position: 60% center;
+  }
+
+  .hero-content {
+    padding: 85px 0;
+  }
+
+  .hero h1 {
+    font-size: 46px;
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image {
+    min-height: 350px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .product-img {
+    height: 170px;
+  }
+
+  .product-card h3 {
+    font-size: 18px;
+    padding: 15px 15px 5px;
+  }
+
+  .product-card p {
+    padding: 0 15px 18px;
+    font-size: 12px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 25px;
+  }
+
+  .contact-form {
+    padding: 25px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .strip-content {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .whatsapp {
+    bottom: 15px;
+    right: 15px;
+    padding: 12px 16px;
+  }
+}
+
+@media(max-width:400px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 39px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container nav-container">
-      <a href="index.html" class="logo">
-        <span class="logo-main">GLOBAL</span>
-        <span class="logo-sub">ENTERPRISES</span>
+<!-- HEADER -->
+<header>
+  <div class="container navbar">
+
+    <a href="#home" class="brand">
+      <!-- Replace the GE symbol with your uploaded logo when available -->
+      <div class="brand-symbol">GE</div>
+      <div>
+        <div class="brand-name">GLOBAL <span>ENTERPRISES</span></div>
+        <div class="brand-sub">BUILDING MATERIALS</div>
+      </div>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#services">Services</a>
+      <a href="#contact" class="nav-cta">Contact Us</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-content">
+    <div class="gold-line"></div>
+    <p class="eyebrow">YOUR CONSTRUCTION PARTNER</p>
+
+    <h1>Building Dreams.<br><span>Delivering Strength.</span></h1>
+
+    <p class="hero-text">
+      Quality building materials, dependable supply and trusted service.
+      Supporting homeowners, contractors, builders and businesses
+      with materials that help build the future.
+    </p>
+
+    <div class="buttons">
+      <a href="#products" class="btn btn-gold">Explore Our Products</a>
+      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- GOLD STRIP -->
+<section class="intro-strip">
+  <div class="container strip-content">
+    <strong>We Supply Strength, You Create Dreams.</strong>
+    <p>Quality Materials &nbsp; | &nbsp; Reliable Service &nbsp; | &nbsp; On-Time Delivery</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container about-grid">
+
+    <div class="about-image">
+      <div class="image-label">
+        <strong>Built on Trust</strong>
+        <p>Committed to quality</p>
+      </div>
+    </div>
+
+    <div class="about-content">
+      <p class="eyebrow">ABOUT OUR COMPANY</p>
+      <h2 class="section-title">Your Trusted Partner in Building.</h2>
+
+      <p class="section-text">
+        At Global Enterprises, we believe every great structure begins
+        with the right materials and a reliable partner. We serve the
+        construction industry with a focus on quality, customer
+        satisfaction and long-term relationships.
+      </p>
+
+      <p class="section-text">
+        From individual home construction to large-scale projects,
+        we aim to make material sourcing convenient and dependable.
+      </p>
+
+      <div class="about-points">
+        <div class="about-point"><span>✦</span> Quality products and materials</div>
+        <div class="about-point"><span>✦</span> Reliable customer service</div>
+        <div class="about-point"><span>✦</span> Trusted business relationships</div>
+        <div class="about-point"><span>✦</span> Wholesale and bulk supply enquiries</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section products-section" id="products">
+  <div class="container">
+
+    <div class="section-heading">
+      <p class="eyebrow">OUR MATERIALS</p>
+      <h2 class="section-title">Quality for Every Project</h2>
+      <p class="section-text">
+        Explore our building material categories. Contact our team
+        for pricing, availability and bulk requirements.
+      </p>
+    </div>
+
+    <div class="product-grid">
+
+      <div class="product-card">
+        <div class="product-img p1"></div>
+        <h3>Cement & Concrete</h3>
+        <p>Materials for foundations, structures and construction work.</p>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img p2"></div>
+        <h3>Steel & TMT</h3>
+        <p>Steel materials for strength and structural applications.</p>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img p3"></div>
+        <h3>Electrical Materials</h3>
+        <p>Electrical supplies and building essentials.</p>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img p4"></div>
+        <h3>Plumbing & Pipes</h3>
+        <p>Pipes, fittings and plumbing-related materials.</p>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img p5"></div>
+        <h3>Hardware & Tools</h3>
+        <p>Hardware, tools and accessories for construction.</p>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img p6"></div>
+        <h3>Construction Supplies</h3>
+        <p>Additional materials and supplies for building projects.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+
+    <div class="section-heading">
+      <p class="eyebrow">CONNECT WITH GLOBAL ENTERPRISES</p>
+      <h2 class="section-title">How Can We Help You?</h2>
+      <p class="section-text">
+        Whether you're a customer, wholesaler, business partner or
+        job seeker, we welcome you to connect with our team.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <a href="#contact" class="service-card">
+        <div class="service-icon">01</div>
+        <h3>Customer Help</h3>
+        <p>
+          Need product information, assistance with an order,
+          delivery support or want to share feedback?
+        </p>
+        <span class="service-link">CUSTOMER SUPPORT →</span>
       </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
-        ☰
-      </button>
-
-      <nav class="nav" id="mainNav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section class="hero" id="home">
-    <div class="container hero-content">
-      <p class="eyebrow">YOUR TRUSTED BUILDING MATERIALS PARTNER</p>
-
-      <h1>Building Dreams.<br>
-        <span>Delivering Strength.</span>
-      </h1>
-
-      <p class="hero-description">
-        Quality building materials, dependable service and trusted
-        business relationships for every construction project.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#products" class="btn btn-gold">Explore Products</a>
-        <a href="#contact" class="btn btn-outline">Contact Us</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="container">
-      <p class="eyebrow">WHO WE ARE</p>
-      <h2>About Global Enterprises</h2>
-
-      <p class="section-description">
-        Global Enterprises is a building materials business committed
-        to quality products, reliable service and helping customers
-        build with confidence. We aim to serve homeowners, builders,
-        contractors, dealers and construction professionals.
-      </p>
-
-      <div class="features">
-        <div class="feature-card">
-          <span class="feature-icon">◆</span>
-          <h3>Quality Products</h3>
-          <p>Materials selected to support strong and reliable construction.</p>
-        </div>
-
-        <div class="feature-card">
-          <span class="feature-icon">◆</span>
-          <h3>Reliable Service</h3>
-          <p>Dedicated assistance and dependable customer service.</p>
-        </div>
-
-        <div class="feature-card">
-          <span class="feature-icon">◆</span>
-          <h3>Customer Focus</h3>
-          <p>Building lasting relationships through trust and support.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUCTS -->
-  <section class="section section-dark" id="products">
-    <div class="container">
-      <p class="eyebrow">WHAT WE OFFER</p>
-      <h2>Products & Materials</h2>
-      <p class="section-description">
-        Explore our building materials and product categories.
-        Contact us for product availability and pricing.
-      </p>
-
-      <div class="product-grid">
-        <div class="product-card">
-          <div class="product-icon">▰</div>
-          <h3>Cement</h3>
-          <p>Building and construction cement products.</p>
-        </div>
-
-        <div class="product-card">
-          <div class="product-icon">▤</div>
-          <h3>Steel</h3>
-          <p>Steel and reinforcement materials for construction.</p>
-        </div>
-
-        <div class="product-card">
-          <div class="product-icon">⌁</div>
-          <h3>Electrical</h3>
-          <p>Electrical products and building essentials.</p>
-        </div>
-
-        <div class="product-card">
-          <div class="product-icon">◉</div>
-          <h3>Plumbing</h3>
-          <p>Pipes, fittings and plumbing materials.</p>
-        </div>
-
-        <div class="product-card">
-          <div class="product-icon">▦</div>
-          <h3>Hardware</h3>
-          <p>Hardware and construction accessories.</p>
-        </div>
-
-        <div class="product-card">
-          <div class="product-icon">＋</div>
-          <h3>Other Materials</h3>
-          <p>Contact us for additional building materials.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="section" id="services">
-    <div class="container">
-      <p class="eyebrow">OUR BUSINESS SERVICES</p>
-      <h2>Let's Build Business Together</h2>
-
-      <div class="service-grid">
-
-        <a href="#customer-help" class="service-card">
-          <h3>Customer Help</h3>
-          <p>Questions, feedback, complaints and customer assistance.</p>
-          <span class="card-link">Get Help →</span>
-        </a>
-
-        <a href="#wholesale" class="service-card">
-          <h3>Wholesale Enquiry</h3>
-          <p>Bulk materials, dealer pricing and wholesale requirements.</p>
-          <span class="card-link">Enquire Now →</span>
-        </a>
-
-        <a href="#partners" class="service-card">
-          <h3>Business Partner</h3>
-          <p>Explore dealership, supplier and business collaboration opportunities.</p>
-          <span class="card-link">Partner With Us →</span>
-        </a>
-
-        <a href="#careers" class="service-card">
-          <h3>Careers & Jobs</h3>
-          <p>Interested in working with us? Submit your career enquiry.</p>
-          <span class="card-link">Apply / Enquire →</span>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ENQUIRY SECTION -->
-  <section class="section section-dark" id="enquiries">
-    <div class="container">
-      <p class="eyebrow">CONNECT WITH US</p>
-      <h2>How Can We Help You?</h2>
-
-      <div class="enquiry-grid">
-
-        <div class="enquiry-box" id="customer-help">
-          <h3>Customer Help</h3>
-          <p>Need help with products, orders, delivery or a complaint?</p>
-          <a href="#contact" class="btn btn-gold">Contact Support</a>
-        </div>
-
-        <div class="enquiry-box" id="wholesale">
-          <h3>Wholesale Enquiry</h3>
-          <p>Looking for materials in bulk or wholesale quantities?</p>
-          <a href="#contact" class="btn btn-gold">Wholesale Enquiry</a>
-        </div>
-
-        <div class="enquiry-box" id="partners">
-          <h3>Business Partnership</h3>
-          <p>Interested in becoming a dealer, supplier or business partner?</p>
-          <a href="#contact" class="btn btn-gold">Partner With Us</a>
-        </div>
-
-        <div class="enquiry-box" id="careers">
-          <h3>Jobs & Careers</h3>
-          <p>Interested in employment or joining our team?</p>
-          <a href="#contact" class="btn btn-gold">Career Enquiry</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="container contact-container">
-      <div class="contact-info">
-        <p class="eyebrow">GET IN TOUCH</p>
-        <h2>Contact Global Enterprises</h2>
+      <a href="#contact" class="service-card">
+        <div class="service-icon">02</div>
+        <h3>Wholesale Enquiry</h3>
         <p>
-          Contact us for product details, customer support,
-          wholesale enquiries, partnerships or job opportunities.
+          Looking for bulk materials, wholesale pricing or
+          supply for your business or project?
+        </p>
+        <span class="service-link">BULK ENQUIRY →</span>
+      </a>
+
+      <a href="#contact" class="service-card">
+        <div class="service-icon">03</div>
+        <h3>Business Partner</h3>
+        <p>
+          Become a dealer, distributor, supplier or explore
+          a new business collaboration with us.
+        </p>
+        <span class="service-link">PARTNER WITH US →</span>
+      </a>
+
+      <a href="#contact" class="service-card">
+        <div class="service-icon">04</div>
+        <h3>Careers & Jobs</h3>
+        <p>
+          Explore opportunities to join our team and grow
+          your career with Global Enterprises.
+        </p>
+        <span class="service-link">CAREER ENQUIRY →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS BANNER -->
+<section class="business-banner">
+  <div class="container">
+    <p class="eyebrow">GLOBAL ENTERPRISES</p>
+    <h2>Building Together.<br>Growing Together.</h2>
+    <p>Let's create lasting relationships and build a stronger future.</p>
+    <a href="#contact" class="btn btn-gold">Start an Enquiry</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+  <div class="container contact-grid">
+
+    <div>
+      <p class="eyebrow">CONTACT US</p>
+      <h2 class="section-title">Let's Talk About<br><span style="color:var(--gold)">Your Requirements.</span></h2>
+
+      <p class="section-text">
+        Contact us for products, bulk orders, customer assistance,
+        partnerships, supplier enquiries or career opportunities.
+      </p>
+
+      <div class="contact-details">
+
+        <div class="contact-item">
+          <h4>Business Address</h4>
+          <p>Vishnuwadi Road, Madabhavi,<br>Karnataka 591232, India</p>
+        </div>
+
+        <div class="contact-item">
+          <h4>Phone</h4>
+          <p><a href="tel:+919380902234">+91 93809 02234</a></p>
+          <p><a href="tel:+918123995203">+91 81239 95203</a></p>
+        </div>
+
+        <div class="contact-item">
+          <h4>WhatsApp</h4>
+          <p>Connect with us for quick business enquiries.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3>Send an Enquiry</h3>
+
+      <form id="enquiryForm">
+
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="Enter your phone number" required>
+        </div>
+
+        <div class="form-group">
+          <label for="type">Enquiry Type</label>
+          <select id="type" required>
+            <option value="">Select enquiry type</option>
+            <option>Customer Help</option>
+            <option>Wholesale Enquiry</option>
+            <option>Business Partner</option>
+            <option>Supplier Enquiry</option>
+            <option>Job / Career</option>
+            <option>Product Enquiry</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" placeholder="Tell us about your requirements..." required></textarea>
+        </div>
+
+        <button class="btn btn-gold" type="submit">Send via WhatsApp</button>
+
+        <p class="form-note">
+          This form opens WhatsApp to send your enquiry.
+          Firebase database submission will be connected in a later step.
         </p>
 
-        <div class="contact-item">
-          <strong>Address</strong>
-          <p>Vishnuwadi Road, Madabhavi, Karnataka 591232, India</p>
-        </div>
+      </form>
+    </div>
 
-        <div class="contact-item">
-          <strong>Phone</strong>
-          <p>Contact us by phone for business enquiries.</p>
-        </div>
+  </div>
+</section>
 
-        <div class="contact-item">
-          <strong>Business Hours</strong>
-          <p>Contact us to confirm business hours.</p>
-        </div>
-      </div>
+<!-- FOOTER -->
+<footer>
+  <div class="container">
 
-      <div class="contact-box">
-        <h3>Send Us An Enquiry</h3>
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-title">GLOBAL <span>ENTERPRISES</span></div>
         <p>
-          Our enquiry forms and database connection will be added
-          in the next development steps.
+          Quality materials. Reliable service. Trusted relationships.
+          Supporting your construction journey.
         </p>
-        <a href="#enquiries" class="btn btn-gold">Choose Enquiry Type</a>
+        <br>
+        <p style="color:var(--gold)">We Supply Strength, You Create Dreams.</p>
       </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#products">Products</a>
+          <a href="#services">Our Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Enquiries</h4>
+        <div class="footer-links">
+          <a href="#contact">Customer Help</a>
+          <a href="#contact">Wholesale Enquiry</a>
+          <a href="#contact">Business Partner</a>
+          <a href="#contact">Careers & Jobs</a>
+        </div>
+      </div>
+
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <div class="logo">
-        <span class="logo-main">GLOBAL</span>
-        <span class="logo-sub">ENTERPRISES</span>
-      </div>
-
-      <p>We Supply Strength, You Create Dreams.</p>
-
-      <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-        <a href="#contact">Contact</a>
-      </div>
-
-      <p class="copyright">
-        © 2026 Global Enterprises. All rights reserved.
-      </p>
+    <div class="copyright">
+      © 2026 Global Enterprises. All rights reserved.
     </div>
-  </footer>
 
-  <script src="js/script.js"></script>
+  </div>
+</footer>
+
+<!-- WHATSAPP QUICK CONTACT -->
+<a class="whatsapp"
+   href="https://wa.me/919380902234"
+   target="_blank"
+   rel="noopener">
+   WhatsApp Us
+</a>
+
+<script>
+/* MOBILE MENU */
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+});
+
+/* ENQUIRY TO WHATSAPP */
+document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const type = document.getElementById('type').value;
+  const message = document.getElementById('message').value.trim();
+
+  const text =
+    "GLOBAL ENTERPRISES - WEBSITE ENQUIRY%0A%0A" +
+    "Name: " + encodeURIComponent(name) + "%0A" +
+    "Phone: " + encodeURIComponent(phone) + "%0A" +
+    "Enquiry Type: " + encodeURIComponent(type) + "%0A" +
+    "Message: " + encodeURIComponent(message);
+
+  const url = "https://wa.me/919380902234?text=" + text;
+
+  window.open(url, "_blank");
+});
+</script>
 
 </body>
 </html>
